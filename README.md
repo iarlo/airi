@@ -28,7 +28,7 @@ To set up and run Airi locally, follow these steps:
 
 ### Clone the repository:
 ```bash
-git clone https://github.com/yourusername/airi.git
+git clone https://github.com/iarlo/airi.git
 cd airi
 ```
 
