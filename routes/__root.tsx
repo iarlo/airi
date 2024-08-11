@@ -1,18 +1,26 @@
+import LogoComponent from '@components/Logo';
+import Titlebar from '@components/Titlebar';
 import { navbarLinks } from '@config/routes';
+import useWindow from '@hooks/useWindow';
 import { createRootRoute, Link, Outlet } from '@tanstack/react-router';
 import { cn } from '@utils/cn';
 
 const rootComponent = () => {
+  const [w] = useWindow();
   return (
     <>
-      <aside>
-        <header>Airi</header>
+      <Titlebar />
+      <header className={cn('row-start-2', w ? '-translate-y-4' : 'mt-4')}>
+        <LogoComponent size="2rem" center />
+      </header>
+      <aside className="flex flex-wrap justify-center relative">
         <nav
           className={cn(
             // Mobile
             'flex flex-row gap-2 w-full items-center max-w-full px-6 py-8 max-md:[&_span]:hidden',
             // Desktop
-            'md:flex-col md:gap-2 md:h-full md:items-center md:px-6 md:py-8'
+            'md:flex-col md:gap-2 md:h-full md:items-center md:px-6',
+            w ? 'md:py-4' : 'md:py-8'
           )}
         >
           {navbarLinks.map(({ icon: Icon, name, path }) => (

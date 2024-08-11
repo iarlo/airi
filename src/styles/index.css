@@ -100,40 +100,18 @@
   }
 }
 
-header {
-  grid-column: 1;
-  grid-row: 2;
-  text-align: center;
-}
-
-nav {
-  grid-column: 1;
-  grid-row: 2;
-}
-
 main {
   grid-column: 2;
-  grid-row: span 3;
+  grid-row: 2 / 4;
   overflow: auto;
 }
 
 aside {
   grid-column: 1;
-  grid-row: 3;
+  grid-row: span 3;
 }
 
 footer {
   grid-column: 1;
   grid-row: 4;
 }
-
-#airi-logo {
-  user-select: none;
-  font-style: italic;
-  font-weight: 500;
-  align-items: center;
-  vertical-align: middle;
-  padding-right: 1rem;
-  padding-left: 1rem;
-}
-
