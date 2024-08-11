@@ -4,9 +4,36 @@
     "skipLibCheck": true,
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@routes/*": [
+        "./routes/*"
+      ],
+      "@config/*": [
+        "./config/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@hooks/*": [
+        "./src/hooks/*"
+      ],
+      "@pages/*": [
+        "./pages/*"
+      ],
+      "@src/*": [
+        "./src/*"
+      ],
+      "@styles/*": [
+        "./src/styles/*"
+      ],
+      "@utils/*": [
+        "./utils/*"
+      ]
+    }
   },
   "include": [
-    "./vite.config.ts"
+    "vite.config.ts"
   ]
 }

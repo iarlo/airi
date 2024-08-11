@@ -15,6 +15,7 @@
     "@storybook/react": "^8.2.8",
     "@storybook/react-vite": "^8.2.8",
     "@storybook/test": "^8.2.8",
+    "@tanstack/router-plugin": "^1.47.0",
     "@tauri-apps/cli": ">=2.0.0-rc.0",
     "@types/bun": "latest",
     "@types/react": "^18.2.15",
@@ -38,13 +39,20 @@
     "tailwindcss": "^3.4.9",
     "typescript": "^5.2.2",
     "typescript-eslint": "^8.0.1",
-    "vite": "^5.3.1"
+    "vite": "^5.3.1",
+    "vite-tsconfig-paths": "^5.0.1"
   },
   "dependencies": {
+    "@tanstack/react-router": "^1.47.1",
     "@tauri-apps/api": ">=2.0.0-rc.0",
     "@tauri-apps/plugin-shell": ">=2.0.0-rc.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.5.0",
+    "tailwindcss-animate": "^1.0.7",
+    "zustand": "^4.5.4"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
