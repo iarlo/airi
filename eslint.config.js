@@ -7,9 +7,16 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 export default [
-  { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
+  { ignores: ['src-tauri/'], files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
   {
-    languageOptions: { globals: globals.node },
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
+    languageOptions: {
+      globals: globals.node,
+    },
     plugins: {
       perfectionist,
       unicorn: eslintPluginUnicorn,
@@ -18,6 +25,15 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   eslintPluginPrettierRecommended,
+  {
+    languageOptions: {
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+  },
   pluginReact.configs.flat.recommended,
   {
     rules: {
