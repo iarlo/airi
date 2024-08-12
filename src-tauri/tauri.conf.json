@@ -29,7 +29,14 @@
     ],
     "targets": "all"
   },
-  "identifier": "com.tauri.dev",
-  "productName": "airi",
+  "identifier": "com.github.iarlo",
+  "plugins": {
+    "sql": {
+      "preload": [
+        "sqlite:airi.db"
+      ]
+    }
+  },
+  "productName": "Airi",
   "version": "0.0.0"
 }

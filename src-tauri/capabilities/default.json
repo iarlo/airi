@@ -6,7 +6,10 @@
     "core:app:default",
     "shell:allow-open",
     "core:window:default",
-    "core:window:allow-start-dragging"
+    "core:window:allow-start-dragging",
+    "sql:allow-load",
+    "sql:allow-execute",
+    "sql:default"
   ],
   "windows": [
     "main"
