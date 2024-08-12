@@ -1,4 +1,5 @@
 import pluginJs from '@eslint/js';
+import pluginQuery from '@tanstack/eslint-plugin-query';
 import perfectionist from 'eslint-plugin-perfectionist';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import pluginReact from 'eslint-plugin-react';
@@ -8,6 +9,7 @@ import tseslint from 'typescript-eslint';
 
 export default [
   { ignores: ['src-tauri/'], files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
+  ...pluginQuery.configs['flat/recommended'],
   {
     settings: {
       react: {
