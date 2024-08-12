@@ -13,10 +13,12 @@ import { createFileRoute } from '@tanstack/react-router';
 // Import Routes
 
 import { Route as rootRoute } from './../routes/__root';
+import { Route as UserNewImport } from './../routes/user/new';
 
 // Create Virtual Routes
 
 const IndexLazyImport = createFileRoute('/')();
+const UserIndexLazyImport = createFileRoute('/user/')();
 
 // Create/Update Routes
 
@@ -24,6 +26,18 @@ const IndexLazyRoute = IndexLazyImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./../routes/index.lazy').then((d) => d.Route));
+
+const UserIndexLazyRoute = UserIndexLazyImport.update({
+  path: '/user/',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() =>
+  import('./../routes/user/index.lazy').then((d) => d.Route),
+);
+
+const UserNewRoute = UserNewImport.update({
+  path: '/user/new',
+  getParentRoute: () => rootRoute,
+} as any);
 
 // Populate the FileRoutesByPath interface
 
@@ -36,12 +50,30 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexLazyImport;
       parentRoute: typeof rootRoute;
     };
+    '/user/new': {
+      id: '/user/new';
+      path: '/user/new';
+      fullPath: '/user/new';
+      preLoaderRoute: typeof UserNewImport;
+      parentRoute: typeof rootRoute;
+    };
+    '/user/': {
+      id: '/user/';
+      path: '/user';
+      fullPath: '/user';
+      preLoaderRoute: typeof UserIndexLazyImport;
+      parentRoute: typeof rootRoute;
+    };
   }
 }
 
 // Create and export the route tree
 
-export const routeTree = rootRoute.addChildren({ IndexLazyRoute });
+export const routeTree = rootRoute.addChildren({
+  IndexLazyRoute,
+  UserNewRoute,
+  UserIndexLazyRoute,
+});
 
 /* prettier-ignore-end */
 
@@ -51,11 +83,19 @@ export const routeTree = rootRoute.addChildren({ IndexLazyRoute });
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
-        "/"
+        "/",
+        "/user/new",
+        "/user/"
       ]
     },
     "/": {
       "filePath": "index.lazy.tsx"
+    },
+    "/user/new": {
+      "filePath": "user/new.tsx"
+    },
+    "/user/": {
+      "filePath": "user/index.lazy.tsx"
     }
   }
 }

@@ -39,6 +39,24 @@ export default [
   pluginReact.configs.flat.recommended,
   {
     rules: {
+      'react/prop-types': [
+        2,
+        {
+          ignore: [
+            'className',
+            'variant',
+            'size',
+            'asChild',
+            'children',
+            'position',
+            'orientation',
+            'inset',
+            'checked',
+            'sideOffset',
+            'type',
+          ],
+        },
+      ],
       'react/no-unknown-property': 0,
       'react/react-in-jsx-scope': 0,
       'prettier/prettier': 'error',

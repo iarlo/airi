@@ -1,4 +1,5 @@
 import LogoComponent from '@components/Logo';
+import { ScrollArea } from '@components/ScrollArea';
 import Titlebar from '@components/Titlebar';
 import { navbarLinks } from '@config/routes';
 import useWindow from '@hooks/useWindow';
@@ -36,7 +37,9 @@ const rootComponent = () => {
         </nav>
       </aside>
       <main>
-        <Outlet />
+        <ScrollArea className="p-4">
+          <Outlet />
+        </ScrollArea>
       </main>
     </>
   );
