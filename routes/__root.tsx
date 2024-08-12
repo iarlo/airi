@@ -1,5 +1,4 @@
 import LogoComponent from '@components/Logo';
-import { ScrollArea } from '@components/ScrollArea';
 import Titlebar from '@components/Titlebar';
 import { navbarLinks } from '@config/routes';
 import useWindow from '@hooks/useWindow';
@@ -11,7 +10,7 @@ const rootComponent = () => {
   return (
     <>
       <Titlebar />
-      <header className={cn('row-start-2', w ? '-translate-y-4' : 'mt-4')}>
+      <header className={cn('row-start-2', !w && 'mt-4')}>
         <LogoComponent size="2rem" center />
       </header>
       <aside className="flex flex-wrap justify-center relative">
@@ -20,8 +19,7 @@ const rootComponent = () => {
             // Mobile
             'flex flex-row gap-2 w-full items-center max-w-full px-6 py-8 max-md:[&_span]:hidden',
             // Desktop
-            'md:flex-col md:gap-2 md:h-full md:items-center md:px-6',
-            w ? 'md:py-4' : 'md:py-8'
+            'md:flex-col md:gap-2 md:h-full md:items-center md:px-6'
           )}
         >
           {navbarLinks.map(({ icon: Icon, name, path }) => (
@@ -36,10 +34,8 @@ const rootComponent = () => {
           ))}
         </nav>
       </aside>
-      <main>
-        <ScrollArea className="p-4">
-          <Outlet />
-        </ScrollArea>
+      <main className="p-4">
+        <Outlet />
       </main>
     </>
   );
