@@ -47,7 +47,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <section className="py-4">
+    <section>
       <DataTableToolbar addPath={addPath} table={table} />
       <div className="rounded-md border mb-4">
         <Table>
