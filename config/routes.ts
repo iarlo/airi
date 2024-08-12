@@ -1,29 +1,31 @@
 import { Calendar, Newspaper, Settings, Stethoscope, User } from 'lucide-react';
 
+import i18next from './i18n/main';
+
 export const navbarLinks = [
   {
     icon: Newspaper,
-    name: 'Relatório',
+    name: i18next.t('pages.home'),
     path: '/',
   },
   {
     icon: Calendar,
-    name: 'Agendamentos',
+    name: i18next.t('pages.appointment'),
     path: '/appointment',
   },
   {
     icon: User,
-    name: 'Pacientes',
+    name: i18next.t('pages.user'),
     path: '/user',
   },
   {
     icon: Stethoscope,
-    name: 'Agentes',
+    name: i18next.t('pages.agent'),
     path: '/agent',
   },
   {
     icon: Settings,
-    name: 'Configurações',
+    name: i18next.t('pages.settings'),
     path: '/settings',
   },
 ];

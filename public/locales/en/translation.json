@@ -1,0 +1,52 @@
+{
+  "general": {
+    "actions": {
+      "add": "Add",
+      "create": "Create",
+      "delete": "Delete",
+      "edit": "Edit",
+      "update": "Update",
+      "view": "View"
+    },
+    "placeholder": {
+      "filter": "Filter by {{what}}...",
+      "loading": "Loading...",
+      "noResults": "No results found.",
+      "search": "Search...",
+      "select": "Select..."
+    },
+    "status": {
+      "error": "Error",
+      "info": "Info",
+      "success": "Success",
+      "warning": "Warning"
+    }
+  },
+  "pages": {
+    "agent": "Agents",
+    "appointment": "Appointments",
+    "home": "Overview",
+    "settings": "Settings",
+    "user": "Users"
+  },
+  "table": {
+    "columns": "Columns",
+    "pagination": {
+      "firstPage": "First page",
+      "lastPage": "Last page",
+      "nextPage": "Next page",
+      "page": "Page {{page}} of {{totalPages}}",
+      "previousPage": "Previous page",
+      "rowsPerPage": "Rows per page:",
+      "selected": "{{count}} of {{totalRows}} row(s) selected"
+    },
+    "user": {
+      "columns": {
+        "agent_name": "Agent",
+        "birth": "Birth date",
+        "id": "ID",
+        "name": "Name"
+      }
+    }
+  }
+}

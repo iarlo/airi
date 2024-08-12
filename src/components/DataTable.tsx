@@ -1,3 +1,4 @@
+import i18n from '@config/i18n/main';
 import { routeTree } from '@src/routeTree.gen';
 import { ParseRoute } from '@tanstack/react-router';
 import {
@@ -75,7 +76,7 @@ export function DataTable<TData, TValue>({
             ) : (
               <TableRow>
                 <TableCell colSpan={columns.length} className="h-24 text-center">
-                  No results.
+                  {i18n.t('general.placeholder.noResults')}
                 </TableCell>
               </TableRow>
             )}

@@ -1,0 +1,52 @@
+{
+  "general": {
+    "actions": {
+      "add": "Adicionar",
+      "create": "Criar",
+      "delete": "Excluir",
+      "edit": "Editar",
+      "update": "Atualizar",
+      "view": "Visualizar"
+    },
+    "placeholder": {
+      "filter": "Filtrar por {{what}}...",
+      "loading": "Carregando...",
+      "noResults": "Nenhum resultado encontrado.",
+      "search": "Pesquisar...",
+      "select": "Selecione..."
+    },
+    "status": {
+      "error": "Erro",
+      "info": "Informação",
+      "success": "Sucesso",
+      "warning": "Aviso"
+    }
+  },
+  "pages": {
+    "agent": "Agentes",
+    "appointment": "Agendamentos",
+    "home": "Relatórios",
+    "settings": "Configurações",
+    "user": "Pacientes"
+  },
+  "table": {
+    "columns": "Colunas",
+    "pagination": {
+      "firstPage": "Primeira página",
+      "lastPage": "Ultima página",
+      "nextPage": "Proxima página",
+      "page": "Pagina {{page}} de {{totalPages}}",
+      "previousPage": "Pagina anterior",
+      "rowsPerPage": "Linhas por página:",
+      "selected": "{{count}} de {{totalRows}} linha(s) selecionada(s)"
+    },
+    "user": {
+      "columns": {
+        "agent_name": "Agente",
+        "birth": "Nascimento",
+        "id": "ID",
+        "name": "Nome"
+      }
+    }
+  }
+}
