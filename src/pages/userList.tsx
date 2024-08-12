@@ -1,7 +1,7 @@
 import { DataTable } from '@components/DataTable';
 import { countTable } from '@src/database/queries/count';
 import { selectManyUser } from '@src/database/queries/select';
-import { useQueries } from '@tanstack/react-query';
+import { keepPreviousData, useQueries } from '@tanstack/react-query';
 import { PaginationState } from '@tanstack/react-table';
 import { asyncWrapper } from '@utils/asyncWrapper';
 import { columns } from '@utils/userColumn';
@@ -16,6 +16,7 @@ const UserList = () => {
   const [userList, userCount] = useQueries({
     queries: [
       {
+        placeholderData: keepPreviousData,
         queryKey: ['userList', pagination],
         queryFn: async () => {
           const [data] = await asyncWrapper(
