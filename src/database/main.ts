@@ -8,7 +8,7 @@ export interface User {
   created_at?: Date;
   gender: 'F' | 'M';
   id: number;
-  name: null | string;
+  name: string;
   phone: null | string;
   updated_at?: Date;
 }
@@ -26,6 +26,7 @@ export interface Agent {
   created_at?: Date;
   gender: 'F' | 'M';
   id: number;
+  birthdate: Date | null;
   name: null | string;
   phone: null | string;
   updated_at?: Date;
