@@ -1,5 +1,6 @@
 import LogoComponent from '@components/Logo';
 import Titlebar from '@components/Titlebar';
+import { Toaster } from '@components/Toaster';
 import { navbarLinks } from '@config/routes';
 import useWindow from '@hooks/useWindow';
 import { createRootRoute, Link, Outlet } from '@tanstack/react-router';
@@ -37,6 +38,7 @@ const rootComponent = () => {
       <main className="p-4">
         <Outlet />
       </main>
+      <Toaster />
     </>
   );
 };
