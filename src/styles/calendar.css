@@ -1,0 +1,63 @@
+.rbc-calendar  {
+  * {
+    @apply !border-border
+  }
+  .rbc-off-range-bg {
+    @apply !bg-muted
+  }
+  .rbc-off-range {
+    @apply !text-muted-foreground
+  }
+  .rbc-today {
+    @apply !bg-primary
+  }
+  .rbc-now.rbc-current {
+    @apply text-primary-foreground
+  }
+  .rbc-day-slot .rbc-events-container {
+    @apply mr-0
+  }
+  .rbc-month-view {
+    .rbc-row {
+      @apply relative w-full
+    }
+    .rbc-row-segment {
+      @apply w-full relative overflow-clip
+    }
+    .rbc-row-segment:has(a) {
+      @apply before:bg-primary-foreground before:-z-50 before:pointer-events-none before:absolute before:w-[calc(100%-1rem)] before:h-full before:rounded-lg overflow-clip text-ellipsis mb-1 px-2 pr-3
+    }
+    .rbc-row-segment:has(a) > a {
+      @apply bg-transparent
+    }
+  }
+  .rbc-time-view {
+    .rbc-events-container {
+      a {
+        @apply flex absolute
+      }
+    }
+  }
+  .rbc-button-link {
+  @apply !z-10 !relative top-0 left-0 right-0 select-none
+}
+
+  .rbc-row-content, .rbc-row-segment {
+    @apply z-auto
+  }
+  .rbc-day-bg .rbc-off-range-bg {
+    @apply !-z-10
+  }
+  .rbc-day-slot .rbc-events-container {
+    @apply static
+  }
+  .rbc-day-slot.rbc-time-column .rbc-events-container > * {
+    @apply absolute
+  }
+  .rbc-row-segment {
+    @apply w-full relative overflow-clip
+  }
+  .rbc-row {
+    @apply relative w-full
+  }
+}

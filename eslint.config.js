@@ -54,6 +54,7 @@ export default [
             'checked',
             'sideOffset',
             'type',
+            'align',
           ],
         },
       ],
