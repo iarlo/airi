@@ -1,4 +1,14 @@
-import db, { Agent, Tables, User } from '../main';
+import db, { Agent, Appointment, Tables, User } from '../main';
+
+const selectRandomFromTable = async <T extends keyof Tables, U extends Tables[T]>(
+  table: T,
+  select: (keyof U)[] | '*',
+  limit: number
+): Promise<U[]> =>
+  await db.select(
+    `SELECT ${typeof select === 'string' ? select : select.join(',')} FROM ${table} ORDER BY RANDOM() LIMIT $1`,
+    [limit]
+  );
 
 const selectFromTable = async (table: keyof Tables, id: number) =>
   await db.select(`SELECT * FROM ${table} WHERE id = $1`, [id]);
@@ -15,12 +25,22 @@ const selectManyUser = async (limit: number, offset: number): Promise<(User & { 
     [limit, offset]
   );
 
-const selectAppointmentsByDate = async (firstDate: Date, lastDate: Date) =>
+const selectAppointmentsByDate = async (
+  firstDate: Date,
+  lastDate: Date
+): Promise<(Appointment & { user_name: string | null })[]> =>
   await db.select(
-    'SELECT *, users.name as user_name FROM appointments WHERE date BETWEEN $1 AND $2 LEFT JOIN users ON users.id = appointments.user_id',
+    'SELECT appointments.*, users.name as user_name FROM appointments LEFT JOIN users ON users.id = appointments.user_id WHERE date BETWEEN $1 AND $2',
     [firstDate, lastDate]
   );
 
 const selectManyAgent = async (): Promise<Agent[]> => await db.select(`SELECT * FROM agents`);
 
-export { selectManyUser, selectManyAgent, selectAppointmentsByDate, selectFromTable, selectFromTableBy };
+export {
+  selectRandomFromTable,
+  selectManyUser,
+  selectManyAgent,
+  selectAppointmentsByDate,
+  selectFromTable,
+  selectFromTableBy,
+};
