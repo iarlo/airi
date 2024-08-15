@@ -2,6 +2,7 @@ import '@config/i18n/main';
 import '@styles/index.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { RouterProvider, createRouter } from '@tanstack/react-router';
+import { ThemeProvider } from 'next-themes';
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 
@@ -22,7 +23,9 @@ if (!rootElement.innerHTML) {
   root.render(
     <StrictMode>
       <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
+        <ThemeProvider attribute="class">
+          <RouterProvider router={router} />
+        </ThemeProvider>
       </QueryClientProvider>
     </StrictMode>
   );
