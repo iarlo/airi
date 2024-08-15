@@ -1,3 +1,4 @@
+import i18n from '@config/i18n/main';
 import { selectAppointmentsByDate } from '@src/database/queries/select';
 import { queryOptions, useQuery } from '@tanstack/react-query';
 import {
@@ -77,7 +78,7 @@ function CalendarComponent() {
     <>
       <Calendar
         components={components}
-        culture="pt-BR"
+        culture={i18n.language}
         date={date}
         endAccessor="end"
         eventPropGetter={eventPropGetter}

@@ -76,7 +76,7 @@ export function DataTable<TData, TValue>({
             ) : (
               <TableRow>
                 <TableCell colSpan={columns.length} className="h-24 text-center">
-                  {i18n.t('general.placeholder.noResults')}
+                  {i18n.t('table.notFound')}
                 </TableCell>
               </TableRow>
             )}

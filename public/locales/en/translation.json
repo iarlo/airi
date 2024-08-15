@@ -1,36 +1,153 @@
 {
-  "general": {
-    "actions": {
-      "add": "Add",
-      "create": "Create",
-      "delete": "Delete",
-      "edit": "Edit",
-      "update": "Update",
-      "view": "View"
+  "actions": {
+    "add": "Add",
+    "back": "Back",
+    "cancel": "Cancel",
+    "clear": "Clear",
+    "close": "Close",
+    "confirm": "Confirm",
+    "create": "Create",
+    "delete": "Delete",
+    "edit": "Edit",
+    "register": "Register",
+    "reset": "Reset",
+    "save": "Save",
+    "schedule": "Schedule",
+    "search": "Search",
+    "see_more": "See more",
+    "select": "Select",
+    "submit": "Submit",
+    "unselect": "Unselect",
+    "update": "Update",
+    "view": "View"
+  },
+  "errors": {
+    "form": {
+      "invalid": "This field is invalid.",
+      "maxLenght": "{{field}} must be at most {{max}} characters long.",
+      "minLength": "{{field}} must be at least {{min}} characters long.",
+      "mismatch": "This field must contain only {{char}}.",
+      "missing": "Please fill out all required fields.",
+      "required": "This field is required.",
+      "unique": "This field has already been registered."
     },
-    "placeholder": {
-      "filter": "Filter by {{what}}...",
-      "loading": "Loading...",
-      "noResults": "No results found.",
-      "search": "Search...",
-      "select": "Select..."
+    "generic": {
+      "notFound": "Resource not found.",
+      "serverError": "Internal server error.",
+      "unknown": "An unexpected error occurred."
     },
-    "status": {
-      "error": "Error",
-      "info": "Info",
-      "success": "Success",
-      "warning": "Warning"
+    "network": {
+      "connection": "Could not connect to the server. Please check your internet connection.",
+      "timeout": "The request timed out. Please check your connection and try again."
     }
   },
+  "form": {
+    "address": {
+      "label": "Address",
+      "placeholder": "Beneficiary address"
+    },
+    "agent": {
+      "label": "Agent",
+      "placeholder": "Select the agent"
+    },
+    "document": {
+      "label": "Document",
+      "placeholder": "Patient's CPF or CNS"
+    },
+    "filter": "Filter by {{field}}...",
+    "gender": {
+      "label": "Gender",
+      "options": {
+        "F": "Female",
+        "M": "Male"
+      },
+      "placeholder": "Select gender"
+    },
+    "name": {
+      "label": "Full name",
+      "placeholder": "Patient's name"
+    },
+    "phone": {
+      "label": "Phone",
+      "placeholder": "Contact number"
+    }
+  },
+  "generic": {
+    "created": "{{field}} was created successfully.",
+    "deleted": "{{field}} was deleted successfully.",
+    "error": "Error!",
+    "error_message": "An error occurred. Please try again later.",
+    "success": "Success!",
+    "welcomeMessage": "Welcome to our application!"
+  },
   "pages": {
-    "agent": "Agents",
-    "appointment": "Appointments",
-    "home": "Overview",
-    "settings": "Settings",
-    "user": "Users"
+    "about": {
+      "description": "Learn more about our application and the team behind it.",
+      "title": "About"
+    },
+    "agents": {
+      "description": "List of agents.",
+      "title": "Agents"
+    },
+    "appointments": {
+      "description": "Manage your appointments.",
+      "other": {
+        "day": "Day",
+        "month": "Month",
+        "notFound": "No appointments found.",
+        "week": "Week",
+        "year": "Year"
+      },
+      "title": "Appointments"
+    },
+    "form": {
+      "add": "Add {{field}}",
+      "description": {
+        "appointment": "Enter the information to {{action}} the appointment.",
+        "user": "Enter the information to {{action}} the patient."
+      },
+      "edit": "Edit {{field}}",
+      "schedule": "Schedule Appointment",
+      "user_already_exists": "Patient already registered?",
+      "user_does_not_exist": "Patient not found?",
+      "view": "View {{field}}"
+    },
+    "home": {
+      "description": "Home page of the application.",
+      "title": "Report"
+    },
+    "profile": {
+      "title": "User Profile",
+      "updateError": "Could not update the profile. Please try again later.",
+      "updateSuccess": "Your profile has been updated successfully."
+    },
+    "settings": {
+      "saveChanges": "Changes saved successfully.",
+      "saveError": "Could not save changes. Please try again.",
+      "title": "Settings"
+    },
+    "users": {
+      "description": "List of patients.",
+      "title": "Patients"
+    }
   },
   "table": {
-    "columns": "Columns",
+    "columns": {
+      "actions": "Actions",
+      "address": "Address",
+      "agent_name": "Agent",
+      "birth": "Birth",
+      "copy": "Copy {{field}}",
+      "document": "Document",
+      "gender": "Gender",
+      "id": "ID",
+      "label_one": "Column",
+      "label_other": "Columns",
+      "name": "Name",
+      "phone": "Phone",
+      "user": "Patient"
+    },
+    "notFound": "No records found.",
     "pagination": {
       "firstPage": "First page",
       "lastPage": "Last page",
@@ -39,14 +156,6 @@
       "previousPage": "Previous page",
       "rowsPerPage": "Rows per page:",
       "selected": "{{count}} of {{totalRows}} row(s) selected"
-    },
-    "user": {
-      "columns": {
-        "agent_name": "Agent",
-        "birth": "Birth date",
-        "id": "ID",
-        "name": "Name"
-      }
     }
   }
 }

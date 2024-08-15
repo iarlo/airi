@@ -5,27 +5,27 @@ import i18next from './i18n/main';
 export const navbarLinks = [
   {
     icon: Newspaper,
-    name: i18next.t('pages.home'),
+    name: i18next.t('pages.home.title'),
     path: '/',
   },
   {
     icon: Calendar,
-    name: i18next.t('pages.appointment'),
+    name: i18next.t('pages.appointments.title'),
     path: '/appointment',
   },
   {
     icon: User,
-    name: i18next.t('pages.user'),
+    name: i18next.t('pages.users.title'),
     path: '/user',
   },
   {
     icon: Stethoscope,
-    name: i18next.t('pages.agent'),
+    name: i18next.t('pages.agents.title'),
     path: '/agent',
   },
   {
     icon: Settings,
-    name: i18next.t('pages.settings'),
+    name: i18next.t('pages.settings.title'),
     path: '/settings',
   },
 ];

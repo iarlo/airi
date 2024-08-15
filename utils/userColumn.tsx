@@ -30,19 +30,19 @@ export const columns = (mut: Props): ColumnDef<User & { agent_name: string | nul
   },
   {
     accessorKey: 'name',
-    header: i18n.t('table.user.columns.name'),
+    header: i18n.t('table.columns.name'),
   },
   {
     accessorKey: 'agent_name',
-    header: i18n.t('table.user.columns.agent_name'),
+    header: i18n.t('table.columns.agent_name'),
   },
   {
     accessorKey: 'phone',
-    header: i18n.t('table.user.columns.phone'),
+    header: i18n.t('table.columns.phone'),
   },
   {
     accessorKey: 'cns',
-    header: i18n.t('table.user.columns.document'),
+    header: i18n.t('table.columns.document'),
   },
   {
     cell: ({ row }) => {
@@ -52,20 +52,21 @@ export const columns = (mut: Props): ColumnDef<User & { agent_name: string | nul
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button className="h-8 w-8 p-0" variant="ghost">
-              <span className="sr-only">Abrir menu</span>
               <MoreHorizontal className="h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Ações</DropdownMenuLabel>
-            <DropdownMenuItem onClick={() => navigator.clipboard.writeText(user.name)}>Copiar nome</DropdownMenuItem>
+            <DropdownMenuLabel>{i18n.t('table.columns.actions')}</DropdownMenuLabel>
+            <DropdownMenuItem onClick={() => navigator.clipboard.writeText(user.name)}>
+              {i18n.t('table.columns.copy', { field: i18n.t('table.columns.name').toLowerCase() })}
+            </DropdownMenuItem>
             <DropdownMenuItem onClick={() => navigator.clipboard.writeText(user.cns ?? 'Sem documento')}>
-              Copiar documento
+              {i18n.t('table.columns.copy', { field: i18n.t('table.columns.document').toLowerCase() })}
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem className="p-0">
               <Link to={'/user/edit/$id'} params={{ id: user.id.toString() }} className="w-full px-2 py-1.5">
-                Editar
+                {i18n.t('actions.edit')}
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem
@@ -74,7 +75,7 @@ export const columns = (mut: Props): ColumnDef<User & { agent_name: string | nul
                 mut.mutate(user.id);
               }}
             >
-              Remover
+              {i18n.t('actions.delete')}
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

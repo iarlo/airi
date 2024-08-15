@@ -42,7 +42,7 @@ const AgentList = () => {
     mutationFn: async (id: number) => {
       const [, error] = await asyncWrapper(deleteFromTable, 'agents', id);
       if (error) return toastError();
-      return toastSuccess(i18n.t('general.response.deleted', { what: i18n.t('general.data.agent') }));
+      return toastSuccess(i18n.t('generic.deleted', { what: i18n.t('table.columns.agent_name') }));
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['agentList'] });

@@ -1,3 +1,4 @@
+import i18n from '@config/i18n/main';
 import { cn } from '@utils/cn';
 import { ArrowRightIcon, LucideProps } from 'lucide-react';
 import { ForwardRefExoticComponent, RefAttributes } from 'react';
@@ -35,7 +36,7 @@ function BentoCardComponent({ background, className, desc, icon: Icon, title }: 
         )}
       >
         <span className=" bg-primary-foreground/40 text-primary pointer-events-auto gap-2 inline-flex items-center max-w-fit p-2 rounded-lg text-sm transition">
-          Saiba mais
+          {i18n.t('actions.see_more')}
           <ArrowRightIcon className="ml-2 h-4 w-4" />
         </span>
       </div>

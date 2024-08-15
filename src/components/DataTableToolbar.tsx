@@ -19,19 +19,19 @@ export function DataTableToolbar<TData>({ table, addPath }: DataTableToolbarProp
       <Button asChild>
         <Link to={addPath}>
           <Plus absoluteStrokeWidth size={16} strokeWidth={2} />
-          <span className="ms-2">{i18n.t('general.actions.add')}</span>
+          <span className="ms-2">{i18n.t('actions.add')}</span>
         </Link>
       </Button>
       <Input
         className="max-w-sm"
         onChange={(event) => table.getColumn('name')?.setFilterValue(event.target.value)}
-        placeholder={i18n.t('general.placeholder.filter', { what: i18n.t('table.user.columns.name').toLowerCase() })}
+        placeholder={i18n.t('form.filter', { field: i18n.t('table.columns.name').toLowerCase() })}
         value={(table.getColumn('name')?.getFilterValue() as string) ?? ''}
       />
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="outline">
-            {i18n.t('table.columns')} <ChevronDown className="ml-2 h-4 w-4" />
+            {i18n.t('table.columns.label', { count: 2 })} <ChevronDown className="ml-2 h-4 w-4" />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">

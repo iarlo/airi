@@ -18,7 +18,7 @@ function CalendarToolbar({ label, onNavigate, onView, view }: Readonly<ToolbarPr
         <Button asChild className="align-middle ms-2">
           <Link to="/">
             <Plus absoluteStrokeWidth size={16} strokeWidth={2} />
-            <span className="ms-2">{i18n.t('general.actions.add')}</span>
+            <span className="ms-2">{i18n.t('actions.add')}</span>
           </Link>
         </Button>
       </div>
@@ -29,21 +29,21 @@ function CalendarToolbar({ label, onNavigate, onView, view }: Readonly<ToolbarPr
           onClick={() => onView('month')}
           variant={view === 'month' ? 'default' : 'outline'}
         >
-          Mês
+          {i18n.t('pages.appointments.other.month')}
         </Button>
         <Button
           className={view === 'week' ? 'active border-l' : undefined}
           onClick={() => onView('week')}
           variant={view === 'week' ? 'default' : 'outline'}
         >
-          Semana
+          {i18n.t('pages.appointments.other.week')}
         </Button>
         <Button
           className={view === 'day' ? 'active border-l border-r' : undefined}
           onClick={() => onView('day')}
           variant={view === 'day' ? 'default' : 'outline'}
         >
-          Dia
+          {i18n.t('pages.appointments.other.day')}
         </Button>
       </div>
     </div>

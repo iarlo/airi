@@ -1,36 +1,153 @@
 {
-  "general": {
-    "actions": {
-      "add": "Adicionar",
-      "create": "Criar",
-      "delete": "Excluir",
-      "edit": "Editar",
-      "update": "Atualizar",
-      "view": "Visualizar"
+  "actions": {
+    "add": "Adicionar",
+    "back": "Voltar",
+    "cancel": "Cancelar",
+    "clear": "Limpar",
+    "close": "Fechar",
+    "confirm": "Confirmar",
+    "create": "Criar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "register": "Cadastrar",
+    "reset": "Redefinir",
+    "save": "Salvar",
+    "schedule": "Agendar",
+    "search": "Pesquisar",
+    "see_more": "Saiba mais",
+    "select": "Selecionar",
+    "submit": "Enviar",
+    "unselect": "Desselecionar",
+    "update": "Atualizar",
+    "view": "Visualizar"
+  },
+  "errors": {
+    "form": {
+      "invalid": "Este campo é inválido.",
+      "maxLenght": "O {{field}} deve ter no máximo {{max}} caracteres.",
+      "minLength": "O {{field}} deve ter pelo menos {{min}} caracteres.",
+      "mismatch": "Este campo deve conter apenas {{char}}.",
+      "missing": "Por favor, preencha todos os campos obrigatórios.",
+      "required": "O campo é obrigatório.",
+      "unique": "Este campo já foi cadastrado."
     },
-    "placeholder": {
-      "filter": "Filtrar por {{what}}...",
-      "loading": "Carregando...",
-      "noResults": "Nenhum resultado encontrado.",
-      "search": "Pesquisar...",
-      "select": "Selecione..."
+    "generic": {
+      "notFound": "Recurso não encontrado.",
+      "serverError": "Erro interno do servidor.",
+      "unknown": "Ocorreu um erro inesperado."
     },
-    "status": {
-      "error": "Erro",
-      "info": "Informação",
-      "success": "Sucesso",
-      "warning": "Aviso"
+    "network": {
+      "connection": "Não foi possível conectar ao servidor. Verifique sua conexão com a internet.",
+      "timeout": "A solicitação expirou. Verifique sua conexão e tente novamente."
     }
   },
+  "form": {
+    "address": {
+      "label": "Endereço",
+      "placeholder": "Endereço do beneficiário"
+    },
+    "agent": {
+      "label": "Agente",
+      "placeholder": "Selecione o agente"
+    },
+    "document": {
+      "label": "Documento",
+      "placeholder": "CPF ou CNS do paciente"
+    },
+    "filter": "Filtrar por {{field}}...",
+    "gender": {
+      "label": "Sexo",
+      "options": {
+        "F": "Feminino",
+        "M": "Masculino"
+      },
+      "placeholder": "Selecione o sexo"
+    },
+    "name": {
+      "label": "Nome completo",
+      "placeholder": "Nome do paciente"
+    },
+    "phone": {
+      "label": "Telefone",
+      "placeholder": "Número para contato"
+    }
+  },
+  "generic": {
+    "created": "{{field}} foi criado com sucesso.",
+    "deleted": "{{field}} foi excluído com sucesso.",
+    "error": "Erro!",
+    "error_message": "Ocorreu um erro. Por favor, tente novamente mais tarde.",
+    "success": "Sucesso!",
+    "welcomeMessage": "Bem-vindo ao nosso aplicativo!"
+  },
   "pages": {
-    "agent": "Agentes",
-    "appointment": "Agendamentos",
-    "home": "Relatório",
-    "settings": "Configurações",
-    "user": "Pacientes"
+    "about": {
+      "description": "Saiba mais sobre nosso aplicativo e a equipe por trás dele.",
+      "title": "Sobre"
+    },
+    "agents": {
+      "description": "Lista dos agentes.",
+      "title": "Agentes"
+    },
+    "appointments": {
+      "description": "Gerencie os seus agendamentos.",
+      "other": {
+        "day": "Dia",
+        "month": "Mês",
+        "notFound": "Nenhum agendamento foi encontrado.",
+        "week": "Semana",
+        "year": "Ano"
+      },
+      "title": "Agendamentos"
+    },
+    "form": {
+      "add": "Adicionar {{field}}",
+      "description": {
+        "appoiintment": "Insira as informacões para {{action}} a consulta.",
+        "user": "Insira as informacões para {{action}} o paciente."
+      },
+      "edit": "Editar {{field}}",
+      "schedule": "Agendar Consulta",
+      "user_already_exists": "Paciente já cadastrado?",
+      "user_does_not_exist": "Paciente não encontrado?",
+      "view": "Visualizar {{field}}"
+    },
+    "home": {
+      "description": "Página inicial do aplicativo.",
+      "title": "Relatório"
+    },
+    "profile": {
+      "title": "Perfil do Usuário",
+      "updateError": "Não foi possível atualizar o perfil. Tente novamente mais tarde.",
+      "updateSuccess": "Seu perfil foi atualizado com sucesso."
+    },
+    "settings": {
+      "saveChanges": "Alterações salvas com sucesso.",
+      "saveError": "Não foi possível salvar as alterações. Tente novamente.",
+      "title": "Configurações"
+    },
+    "users": {
+      "description": "Lista dos pacientes.",
+      "title": "Pacientes"
+    }
   },
   "table": {
-    "columns": "Colunas",
+    "columns": {
+      "actions": "Ações",
+      "address": "Endereço",
+      "agent_name": "Agente",
+      "birth": "Nascimento",
+      "copy": "Copiar {{field}}",
+      "document": "Documento",
+      "gender": "Sexo",
+      "id": "ID",
+      "label_one": "Coluna",
+      "label_other": "Colunas",
+      "name": "Nome",
+      "phone": "Telefone",
+      "user": "Paciente"
+    },
+    "notFound": "Nenhum registro encontrado.",
     "pagination": {
       "firstPage": "Primeira página",
       "lastPage": "Ultima página",
@@ -39,14 +156,6 @@
       "previousPage": "Pagina anterior",
       "rowsPerPage": "Linhas por página:",
       "selected": "{{count}} de {{totalRows}} linha(s) selecionada(s)"
-    },
-    "user": {
-      "columns": {
-        "agent_name": "Agente",
-        "birth": "Nascimento",
-        "id": "ID",
-        "name": "Nome"
-      }
     }
   }
 }

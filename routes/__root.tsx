@@ -17,9 +17,7 @@ const rootComponent = () => {
       <aside className="flex flex-wrap justify-center relative">
         <nav
           className={cn(
-            // Mobile
             'flex flex-row gap-2 w-full items-center max-w-full px-6 py-8 max-md:[&_span]:hidden',
-            // Desktop
             'md:flex-col md:gap-2 md:h-full md:items-center md:px-6'
           )}
         >

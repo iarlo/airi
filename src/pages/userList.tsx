@@ -48,7 +48,7 @@ const UserList = () => {
     mutationFn: async (id: number) => {
       const [, error] = await asyncWrapper(deleteFromTable, 'users', id);
       if (error) return toastError();
-      return toastSuccess(i18n.t('general.response.deleted', { what: i18n.t('general.data.user') }));
+      return toastSuccess(i18n.t('generic.deleted', { what: i18n.t('table.columns.user') }));
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['userList'] });

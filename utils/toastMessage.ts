@@ -4,14 +4,14 @@ import { toast } from '@hooks/useToast';
 const toastError = (message?: string) =>
   toast({
     variant: 'destructive',
-    title: i18n.t('general.status.error'),
-    description: `${message ?? i18n.t('general.errors.generic')}`,
+    title: i18n.t('generic.error'),
+    description: `${message ?? i18n.t('generic.error_message')}`,
   });
 
 const toastSuccess = (description?: string) =>
   toast({
     variant: 'default',
-    title: i18n.t('general.status.success'),
+    title: i18n.t('generic.success'),
     description,
   });
 
