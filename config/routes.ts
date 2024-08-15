@@ -29,3 +29,22 @@ export const navbarLinks = [
     path: '/settings',
   },
 ];
+
+// export const settingsNavbarLinks = [
+//   {
+//     name: i18next.t('pages.settings.title'),
+//     path: '/settings',
+//   },
+//   {
+//     name: i18next.t('pages.appointments.title'),
+//     path: '/appointment',
+//   },
+//   {
+//     name: i18next.t('pages.users.title'),
+//     path: '/user',
+//   },
+//   {
+//     name: i18next.t('pages.agents.title'),
+//     path: '/agent',
+//   },
+// ];

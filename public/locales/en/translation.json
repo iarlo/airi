@@ -122,6 +122,17 @@
       "updateSuccess": "Your profile has been updated successfully."
     },
     "settings": {
+      "other": {
+        "language": {
+          "description": "Changes the language of the interface, currently supports Portuguese and English.",
+          "footer": "Notice that the interface may become slow while the language is being loaded.",
+          "label": "Language"
+        },
+        "theme": {
+          "description": "Changes the color scheme, icons and elements of the interface to dark colors on a dark background.",
+          "label": "Dark theme"
+        }
+      },
       "saveChanges": "Changes saved successfully.",
       "saveError": "Could not save changes. Please try again.",
       "title": "Settings"

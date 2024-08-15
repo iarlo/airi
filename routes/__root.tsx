@@ -1,13 +1,44 @@
 import LogoComponent from '@components/Logo';
 import Titlebar from '@components/Titlebar';
 import { Toaster } from '@components/Toaster';
-import { navbarLinks } from '@config/routes';
 import useWindow from '@hooks/useWindow';
 import { createRootRoute, Link, Outlet } from '@tanstack/react-router';
 import { cn } from '@utils/cn';
+import { Newspaper, Calendar, User, Stethoscope, Settings } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const rootComponent = () => {
+  const { t } = useTranslation();
   const [w] = useWindow();
+
+  const navbarLinks = [
+    {
+      icon: Newspaper,
+      name: t('pages.home.title'),
+      path: '/',
+    },
+    {
+      icon: Calendar,
+      name: t('pages.appointments.title'),
+      path: '/appointment',
+    },
+    {
+      icon: User,
+      name: t('pages.users.title'),
+      path: '/user',
+    },
+    {
+      icon: Stethoscope,
+      name: t('pages.agents.title'),
+      path: '/agent',
+    },
+    {
+      icon: Settings,
+      name: t('pages.settings.title'),
+      path: '/settings',
+    },
+  ];
+
   return (
     <>
       <Titlebar />

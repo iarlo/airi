@@ -122,6 +122,17 @@
       "updateSuccess": "Seu perfil foi atualizado com sucesso."
     },
     "settings": {
+      "other": {
+        "language": {
+          "description": "Altera o idioma da interface, atualmente suporta o português e o inglês.",
+          "footer": "Note que a interface pode ficar lenta enquanto o idioma é carregado.",
+          "label": "Idioma"
+        },
+        "theme": {
+          "description": "Altera o esquema de cores, ícones e elementos da interface para cores claras em um fundo escuro",
+          "label": "Tema escuro"
+        }
+      },
       "saveChanges": "Alterações salvas com sucesso.",
       "saveError": "Não foi possível salvar as alterações. Tente novamente.",
       "title": "Configurações"

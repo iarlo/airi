@@ -9,7 +9,7 @@ export const resources = {
   en: {
     translation: translationEN,
   },
-  pt: {
+  'pt-BR': {
     translation: translationPT,
   },
 } as const;
