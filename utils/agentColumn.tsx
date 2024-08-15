@@ -37,9 +37,18 @@ export const columns = (mut: Props): ColumnDef<Agent>[] => [
     header: i18n.t('table.columns.phone'),
   },
   {
+    accessorKey: 'birthdate',
+    header: i18n.t('table.columns.birth'),
+  },
+  {
+    accessorKey: 'gender',
+    header: i18n.t('table.columns.gender'),
+    cell: ({ row }) =>
+      row.original.gender === 'M' ? i18n.t('form.gender.options.M') : i18n.t('form.gender.options.F'),
+  },
+  {
     cell: ({ row }) => {
       const user = row.original;
-
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>

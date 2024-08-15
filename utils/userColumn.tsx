@@ -14,6 +14,8 @@ import { Link } from '@tanstack/react-router';
 import { ColumnDef } from '@tanstack/react-table';
 import { MoreHorizontal } from 'lucide-react';
 
+import { formatDocument, formatPhone } from './format';
+
 type Props = UseMutationResult<
   {
     id: string;
@@ -39,10 +41,16 @@ export const columns = (mut: Props): ColumnDef<User & { agent_name: string | nul
   {
     accessorKey: 'phone',
     header: i18n.t('table.columns.phone'),
+    cell: ({ row }) => formatPhone(row.original.phone ?? ''),
   },
   {
     accessorKey: 'cns',
     header: i18n.t('table.columns.document'),
+    cell: ({ row }) => formatDocument(row.original.cns ?? ''),
+  },
+  {
+    accessorKey: 'address',
+    header: i18n.t('table.columns.address'),
   },
   {
     cell: ({ row }) => {
