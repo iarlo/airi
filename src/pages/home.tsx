@@ -3,6 +3,7 @@ import CalendarComponent from '@components/calendar/Calendar';
 import Meteors from '@components/Meteors';
 import Particles from '@components/Particles';
 import { ProfileMarqueeVertical } from '@components/ProfileMarquee';
+import i18n from '@config/i18n/main';
 import { homePageCount } from '@src/database/queries/count';
 import { selectRandomFromTable } from '@src/database/queries/select';
 import { useQueries } from '@tanstack/react-query';
@@ -53,13 +54,13 @@ const HomePage = () => {
       className: 'col-span-3 lg:col-span-1 lg:row-span-2',
       desc: `Você já cadastrou ${count?.usersCount} pacientes`,
       icon: UserCheckIcon,
-      title: 'Pacientes',
+      title: i18n.t('pages.users.title'),
     },
     {
       className: 'col-span-3 lg:col-span-2',
-      desc: `Consultas agendadas para hoje`,
+      desc: `Já foram realizadas ${count?.previousAppointments} consultas`,
       icon: CloudSunIcon,
-      title: 'Bom dias',
+      title: 'Consultas anteriores',
     },
     {
       background: (
@@ -70,7 +71,7 @@ const HomePage = () => {
       className: 'col-span-3 lg:col-span-3',
       desc: `${count?.todayAppointments} consultas agendadas para hoje`,
       icon: CloudSunIcon,
-      title: '',
+      title: 'Hoje',
     },
   ];
   return (

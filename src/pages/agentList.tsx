@@ -41,6 +41,7 @@ const AgentList = () => {
   const removeAgent = useMutation({
     mutationFn: async (id: number) => {
       const [, error] = await asyncWrapper(deleteFromTable, 'agents', id);
+      console.log(error);
       if (error) return toastError();
       return toastSuccess(i18n.t('generic.deleted', { what: i18n.t('table.columns.agent_name') }));
     },
@@ -58,7 +59,7 @@ const AgentList = () => {
         rowCount={agentCount.data?.rowCount ?? 0}
         onPaginationChange={setPagination}
         paginationState={pagination}
-        addPath={'/'}
+        addPath={'/agent/new'}
       />
     </div>
   );
