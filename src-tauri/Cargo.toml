@@ -18,6 +18,9 @@ tauri-build = { version = "2.0.0-rc", features = [] }
 features = ["sqlite"] # or "postgres", or "mysql"
 version = "2.0.0-rc"
 
+[target."cfg(not(any(target_os = \"android\", target_os = \"ios\")))".dependencies]
+tauri-plugin-updater = "2.0.0-rc.0"
+
 [dependencies]
 tauri = { version = "2.0.0-rc", features = [] }
 tauri-plugin-shell = "2.0.0-rc"
