@@ -16,7 +16,7 @@ function CalendarToolbar({ label, onNavigate, onView, view }: Readonly<ToolbarPr
           <ChevronRight absoluteStrokeWidth size={16} strokeWidth={2} />
         </Button>
         <Button asChild className="align-middle ms-2">
-          <Link to="/">
+          <Link to="/appointment/new">
             <Plus absoluteStrokeWidth size={16} strokeWidth={2} />
             <span className="ms-2">{i18n.t('actions.add')}</span>
           </Link>
