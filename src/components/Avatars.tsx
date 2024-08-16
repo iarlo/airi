@@ -1,5 +1,5 @@
 import BoringAvatars, { AvatarProps } from 'boring-avatars';
-import { useTheme } from 'next-themes';
+// import { useTheme } from 'next-themes';
 
 type SizeType = 'large' | 'medium' | 'small';
 
@@ -11,7 +11,7 @@ function Avatar({
     size: SizeType;
   } & Omit<AvatarProps, 'colors' | 'size' | 'square' | 'variant'>
 >) {
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
   const sizeVariants = {
     large: 128,
     medium: 80,
@@ -25,7 +25,8 @@ function Avatar({
 
   return (
     <BoringAvatars
-      colors={theme === 'light' ? colorVariants.light : colorVariants.dark}
+      // colors={theme === 'light' ? colorVariants.light : colorVariants.dark}
+      colors={colorVariants.light}
       name={name}
       size={sizeVariants[size]}
       variant="beam"
