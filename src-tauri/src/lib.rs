@@ -22,7 +22,7 @@ pub fn run() {
             agent_id INTEGER,
             created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-            FOREIGN KEY (agent_id) REFERENCES agents(id)
+            FOREIGN KEY (agent_id) REFERENCES agents(id) ON DELETE SET NULL
         );
 
         CREATE TABLE IF NOT EXISTS agents (
