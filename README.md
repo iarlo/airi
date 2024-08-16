@@ -14,13 +14,16 @@ Airi is a lightweight offline-first desktop app designed to help users manage th
 ![image](https://img.shields.io/badge/bun-282a36?style=for-the-badge&logo=bun&logoColor=fbf0df)
 ![image](https://img.shields.io/badge/Sqlite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 ![image](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![image](https://img.shields.io/badge/postcss-DD3A0A?style=for-the-badge&logo=postcss&logoColor=white)
+![image](https://img.shields.io/badge/React_Query-FF4154?style=for-the-badge&logo=ReactQuery&logoColor=white)
+![image](https://img.shields.io/badge/react%20table-FF4154?style=for-the-badge&logo=react%20table&logoColor=white)
 
 - 🦀 Tauri (Rust)
 - 🧰 SQLX (Rust)
 - ⚛️ React
 - 🍃 TailwindCSS
-- 🐻 Zustand
 - 💅 Shadcn/ui and MagicUI
+<!-- - 🐻 Zustand -->
 
 ## Installation
 To set up and run Airi locally, follow these steps:
