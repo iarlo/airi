@@ -107,6 +107,7 @@
         "placeholder": "Select the date and time"
       },
       "description": {
+        "agent": "Enter the information to {{action}} the agent.",
         "appointment": "Enter the information to {{action}} the appointment.",
         "user": "Enter the information to {{action}} the patient."
       },

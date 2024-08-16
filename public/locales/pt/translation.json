@@ -107,6 +107,7 @@
         "placeholder": "Selecione a data"
       },
       "description": {
+        "agent": "Insira as informacões para {{action}} o agente.",
         "appoiintment": "Insira as informacões para {{action}} a consulta.",
         "user": "Insira as informacões para {{action}} o paciente."
       },
