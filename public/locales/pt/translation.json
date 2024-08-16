@@ -102,12 +102,20 @@
     },
     "form": {
       "add": "Adicionar {{field}}",
+      "date": {
+        "label": "Data e hora",
+        "placeholder": "Selecione a data"
+      },
       "description": {
         "appoiintment": "Insira as informacões para {{action}} a consulta.",
         "user": "Insira as informacões para {{action}} o paciente."
       },
       "edit": "Editar {{field}}",
       "schedule": "Agendar Consulta",
+      "user": {
+        "label": "Paciente",
+        "placeholder": "Selecione o paciente"
+      },
       "user_already_exists": "Paciente já cadastrado?",
       "user_does_not_exist": "Paciente não encontrado?",
       "view": "Visualizar {{field}}"

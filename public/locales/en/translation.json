@@ -102,12 +102,20 @@
     },
     "form": {
       "add": "Add {{field}}",
+      "date": {
+        "label": "Date and time",
+        "placeholder": "Select the date and time"
+      },
       "description": {
         "appointment": "Enter the information to {{action}} the appointment.",
         "user": "Enter the information to {{action}} the patient."
       },
       "edit": "Edit {{field}}",
       "schedule": "Schedule Appointment",
+      "user": {
+        "label": "Patient",
+        "placeholder": "Select the patient"
+      },
       "user_already_exists": "Patient already registered?",
       "user_does_not_exist": "Patient not found?",
       "view": "View {{field}}"
