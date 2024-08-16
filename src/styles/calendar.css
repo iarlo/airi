@@ -9,7 +9,7 @@
     @apply !text-muted-foreground
   }
   .rbc-today {
-    @apply !bg-primary
+    @apply !bg-primary !-z-50
   }
   .rbc-now.rbc-current {
     @apply text-primary-foreground
