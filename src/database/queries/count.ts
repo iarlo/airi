@@ -15,7 +15,7 @@ const countTable = async (table: keyof Tables): Promise<CountTableResponse> =>
 
 const homePageCount = async (): Promise<HomePageCount[]> =>
   await db.select(
-    `SELECT (SELECT COUNT(*) FROM appointments WHERE date BETWEEN JulianDay('now') AND JulianDay('now','+1 day','-0.001 second')) as todayAppointments, (SELECT COUNT(*) FROM appointments WHERE date > date('now')) AS nextAppointments, (SELECT COUNT(*) FROM appointments WHERE date < $1) AS previousAppointments, (SELECT COUNT(*) FROM users) AS usersCount, (SELECT COUNT(*) FROM agents) AS agentsCount`,
+    `SELECT (SELECT COUNT(*) FROM appointments WHERE DATE(date) = date('now','localtime','start of day')) as todayAppointments, (SELECT COUNT(*) FROM appointments WHERE date > date('now')) AS nextAppointments, (SELECT COUNT(*) FROM appointments WHERE date < date('now')) AS previousAppointments, (SELECT COUNT(*) FROM users) AS usersCount, (SELECT COUNT(*) FROM agents) AS agentsCount`,
     []
   );
 

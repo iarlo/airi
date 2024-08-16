@@ -36,6 +36,12 @@ const selectAppointmentsByDate = async (
 
 const selectManyAgent = async (): Promise<Agent[]> => await db.select(`SELECT * FROM agents`);
 
+const selectUserBySearch = async (input: string): Promise<(User & { agent_id: number })[]> =>
+  await db.select(
+    `SELECT users.* FROM users WHERE name LIKE '%' || $1 || '%' ORDER BY CASE WHEN name LIKE $1 || '%' THEN 1 WHEN name LIKE '%' || $1 THEN 3 ELSE 2 END LIMIT 5`,
+    [input]
+  );
+
 export {
   selectRandomFromTable,
   selectManyUser,
@@ -43,4 +49,5 @@ export {
   selectAppointmentsByDate,
   selectFromTable,
   selectFromTableBy,
+  selectUserBySearch,
 };
