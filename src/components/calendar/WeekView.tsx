@@ -57,7 +57,7 @@ CalendarWeekView.navigate = (date: Date, action: NavigateAction, { localizer }: 
 
 CalendarWeekView.title = (date: Date, { localizer }: { localizer: DateLocalizer }) => {
   const [start, ...rest] = CalendarWeekView.range(date, { localizer });
-  return localizer.format({ end: rest.pop()!, start }, 'dayRangeHeaderFormat');
+  return localizer.format({ end: rest.pop()!, start } as unknown as Date, 'dayRangeHeaderFormat');
 };
 
 export default CalendarWeekView as typeof CalendarWeekView & View;
