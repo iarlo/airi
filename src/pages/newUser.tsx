@@ -251,7 +251,7 @@ const NewUserForm = () => {
           </div>
           <div className="mt-4 text-center text-sm">
             {i18n.t('pages.form.user_already_exists')}{' '}
-            <Link className="underline" to="/">
+            <Link className="underline" to="/appointment/new">
               {i18n.t('pages.form.schedule')}
             </Link>
           </div>

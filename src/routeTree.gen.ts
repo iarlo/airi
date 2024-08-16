@@ -14,11 +14,17 @@ import { createFileRoute } from '@tanstack/react-router';
 
 import { Route as rootRoute } from './../routes/__root';
 import { Route as UserNewImport } from './../routes/user/new';
+import { Route as AppointmentNewImport } from './../routes/appointment/new';
+import { Route as AgentNewImport } from './../routes/agent/new';
 
 // Create Virtual Routes
 
 const IndexLazyImport = createFileRoute('/')();
 const UserIndexLazyImport = createFileRoute('/user/')();
+const SettingsIndexLazyImport = createFileRoute('/settings/')();
+const AppointmentIndexLazyImport = createFileRoute('/appointment/')();
+const AgentIndexLazyImport = createFileRoute('/agent/')();
+const UserEditIdLazyImport = createFileRoute('/user/edit/$id')();
 
 // Create/Update Routes
 
@@ -34,10 +40,48 @@ const UserIndexLazyRoute = UserIndexLazyImport.update({
   import('./../routes/user/index.lazy').then((d) => d.Route),
 );
 
+const SettingsIndexLazyRoute = SettingsIndexLazyImport.update({
+  path: '/settings/',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() =>
+  import('./../routes/settings/index.lazy').then((d) => d.Route),
+);
+
+const AppointmentIndexLazyRoute = AppointmentIndexLazyImport.update({
+  path: '/appointment/',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() =>
+  import('./../routes/appointment/index.lazy').then((d) => d.Route),
+);
+
+const AgentIndexLazyRoute = AgentIndexLazyImport.update({
+  path: '/agent/',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() =>
+  import('./../routes/agent/index.lazy').then((d) => d.Route),
+);
+
 const UserNewRoute = UserNewImport.update({
   path: '/user/new',
   getParentRoute: () => rootRoute,
 } as any);
+
+const AppointmentNewRoute = AppointmentNewImport.update({
+  path: '/appointment/new',
+  getParentRoute: () => rootRoute,
+} as any);
+
+const AgentNewRoute = AgentNewImport.update({
+  path: '/agent/new',
+  getParentRoute: () => rootRoute,
+} as any);
+
+const UserEditIdLazyRoute = UserEditIdLazyImport.update({
+  path: '/user/edit/$id',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() =>
+  import('./../routes/user/edit.$id.lazy').then((d) => d.Route),
+);
 
 // Populate the FileRoutesByPath interface
 
@@ -50,11 +94,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexLazyImport;
       parentRoute: typeof rootRoute;
     };
+    '/agent/new': {
+      id: '/agent/new';
+      path: '/agent/new';
+      fullPath: '/agent/new';
+      preLoaderRoute: typeof AgentNewImport;
+      parentRoute: typeof rootRoute;
+    };
+    '/appointment/new': {
+      id: '/appointment/new';
+      path: '/appointment/new';
+      fullPath: '/appointment/new';
+      preLoaderRoute: typeof AppointmentNewImport;
+      parentRoute: typeof rootRoute;
+    };
     '/user/new': {
       id: '/user/new';
       path: '/user/new';
       fullPath: '/user/new';
       preLoaderRoute: typeof UserNewImport;
+      parentRoute: typeof rootRoute;
+    };
+    '/agent/': {
+      id: '/agent/';
+      path: '/agent';
+      fullPath: '/agent';
+      preLoaderRoute: typeof AgentIndexLazyImport;
+      parentRoute: typeof rootRoute;
+    };
+    '/appointment/': {
+      id: '/appointment/';
+      path: '/appointment';
+      fullPath: '/appointment';
+      preLoaderRoute: typeof AppointmentIndexLazyImport;
+      parentRoute: typeof rootRoute;
+    };
+    '/settings/': {
+      id: '/settings/';
+      path: '/settings';
+      fullPath: '/settings';
+      preLoaderRoute: typeof SettingsIndexLazyImport;
       parentRoute: typeof rootRoute;
     };
     '/user/': {
@@ -64,6 +143,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UserIndexLazyImport;
       parentRoute: typeof rootRoute;
     };
+    '/user/edit/$id': {
+      id: '/user/edit/$id';
+      path: '/user/edit/$id';
+      fullPath: '/user/edit/$id';
+      preLoaderRoute: typeof UserEditIdLazyImport;
+      parentRoute: typeof rootRoute;
+    };
   }
 }
 
@@ -71,8 +157,14 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren({
   IndexLazyRoute,
+  AgentNewRoute,
+  AppointmentNewRoute,
   UserNewRoute,
+  AgentIndexLazyRoute,
+  AppointmentIndexLazyRoute,
+  SettingsIndexLazyRoute,
   UserIndexLazyRoute,
+  UserEditIdLazyRoute,
 });
 
 /* prettier-ignore-end */
@@ -84,18 +176,42 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/agent/new",
+        "/appointment/new",
         "/user/new",
-        "/user/"
+        "/agent/",
+        "/appointment/",
+        "/settings/",
+        "/user/",
+        "/user/edit/$id"
       ]
     },
     "/": {
       "filePath": "index.lazy.tsx"
     },
+    "/agent/new": {
+      "filePath": "agent/new.tsx"
+    },
+    "/appointment/new": {
+      "filePath": "appointment/new.tsx"
+    },
     "/user/new": {
       "filePath": "user/new.tsx"
     },
+    "/agent/": {
+      "filePath": "agent/index.lazy.tsx"
+    },
+    "/appointment/": {
+      "filePath": "appointment/index.lazy.tsx"
+    },
+    "/settings/": {
+      "filePath": "settings/index.lazy.tsx"
+    },
     "/user/": {
       "filePath": "user/index.lazy.tsx"
+    },
+    "/user/edit/$id": {
+      "filePath": "user/edit.$id.lazy.tsx"
     }
   }
 }

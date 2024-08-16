@@ -40,4 +40,23 @@ const newUserSchema = z.object({
   birthdate: z.date().optional(),
 });
 
-export { phone, document, gender, name, newUserSchema };
+const newAppointmentSchema = z.object({
+  date: z.string().datetime(),
+  user_id: z
+    .string()
+    .regex(/^[0-9]*$/)
+    .min(1, required),
+  agent_id: z
+    .string()
+    .regex(/^[0-9]*$/)
+    .optional(),
+});
+
+const newAgentSchema = z.object({
+  gender,
+  name,
+  phone,
+  birthdate: z.date().optional(),
+});
+
+export { phone, document, gender, name, newUserSchema, newAppointmentSchema, newAgentSchema };
