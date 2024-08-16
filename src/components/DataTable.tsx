@@ -3,6 +3,7 @@ import { routeTree } from '@src/routeTree.gen';
 import { ParseRoute } from '@tanstack/react-router';
 import {
   ColumnDef,
+  ColumnFiltersState,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
@@ -10,6 +11,7 @@ import {
   PaginationState,
   useReactTable,
 } from '@tanstack/react-table';
+import { useState } from 'react';
 
 import { DataTableToolbar } from './DataTableToolbar';
 import { DataTablePagination } from './PaginationControls';
@@ -32,16 +34,25 @@ export function DataTable<TData, TValue>({
   paginationState,
   addPath,
 }: DataTableProps<TData, TValue>) {
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const table = useReactTable({
     data,
     rowCount,
     columns,
     getCoreRowModel: getCoreRowModel(),
+    onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
     manualPagination: true,
     onPaginationChange,
     state: {
       pagination: paginationState,
+      columnFilters,
+    },
+    initialState: {
+      columnVisibility: {
+        id: false,
+        address: false,
+      },
     },
     debugTable: true,
   });
