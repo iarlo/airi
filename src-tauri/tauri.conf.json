@@ -41,7 +41,7 @@
       "endpoints": [
         "https://github.com/iarlo/airi/releases/latest/download/latest.json"
       ],
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDQ0NkJDQkM2QzJDQjNDQzkKUldUSlBNdkN4c3RyUkdDSS9KUUw2TTlOWW1TNGo2aU9SV3ZCam9XOWh3UkVrWFFVdzVZVEsyM2QK"
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEQ1NkM1QzBCODk2NjY1ODMKUldTRFpXYUpDMXhzMWV2NjFZSkhFdGU5bTJ1aXpQOVlFRmp1V0I2V0FYaDQ3cXY2ZUJzSUFDZUoK"
     }
   },
   "productName": "Airi",
