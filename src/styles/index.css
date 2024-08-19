@@ -115,3 +115,11 @@ footer {
   grid-column: 1;
   grid-row: 4;
 }
+
+.ol-rotate.ol-unselectable.ol-control.ol-hidden, .ol-attribution.ol-unselectable.ol-control.ol-uncollapsible {
+  display: none;
+}
+
+.ol-zoom.ol-unselectable.ol-control button {
+  @apply bg-secondary p-2 rounded-lg px-4 border
+}

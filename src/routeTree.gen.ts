@@ -22,6 +22,7 @@ import { Route as AgentNewImport } from './../routes/agent/new';
 const IndexLazyImport = createFileRoute('/')();
 const UserIndexLazyImport = createFileRoute('/user/')();
 const SettingsIndexLazyImport = createFileRoute('/settings/')();
+const MapIndexLazyImport = createFileRoute('/map/')();
 const AppointmentIndexLazyImport = createFileRoute('/appointment/')();
 const AgentIndexLazyImport = createFileRoute('/agent/')();
 const UserEditIdLazyImport = createFileRoute('/user/edit/$id')();
@@ -46,6 +47,11 @@ const SettingsIndexLazyRoute = SettingsIndexLazyImport.update({
 } as any).lazy(() =>
   import('./../routes/settings/index.lazy').then((d) => d.Route),
 );
+
+const MapIndexLazyRoute = MapIndexLazyImport.update({
+  path: '/map/',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() => import('./../routes/map/index.lazy').then((d) => d.Route));
 
 const AppointmentIndexLazyRoute = AppointmentIndexLazyImport.update({
   path: '/appointment/',
@@ -129,6 +135,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppointmentIndexLazyImport;
       parentRoute: typeof rootRoute;
     };
+    '/map/': {
+      id: '/map/';
+      path: '/map';
+      fullPath: '/map';
+      preLoaderRoute: typeof MapIndexLazyImport;
+      parentRoute: typeof rootRoute;
+    };
     '/settings/': {
       id: '/settings/';
       path: '/settings';
@@ -162,6 +175,7 @@ export const routeTree = rootRoute.addChildren({
   UserNewRoute,
   AgentIndexLazyRoute,
   AppointmentIndexLazyRoute,
+  MapIndexLazyRoute,
   SettingsIndexLazyRoute,
   UserIndexLazyRoute,
   UserEditIdLazyRoute,
@@ -181,6 +195,7 @@ export const routeTree = rootRoute.addChildren({
         "/user/new",
         "/agent/",
         "/appointment/",
+        "/map/",
         "/settings/",
         "/user/",
         "/user/edit/$id"
@@ -203,6 +218,9 @@ export const routeTree = rootRoute.addChildren({
     },
     "/appointment/": {
       "filePath": "appointment/index.lazy.tsx"
+    },
+    "/map/": {
+      "filePath": "map/index.lazy.tsx"
     },
     "/settings/": {
       "filePath": "settings/index.lazy.tsx"
