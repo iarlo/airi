@@ -1,4 +1,4 @@
-import { Calendar, Newspaper, Settings, Stethoscope, User } from 'lucide-react';
+import { Calendar, MapIcon, Newspaper, Settings, Stethoscope, User } from 'lucide-react';
 
 import i18next from './i18n/main';
 
@@ -22,6 +22,11 @@ export const navbarLinks = [
     icon: Stethoscope,
     name: i18next.t('pages.agents.title'),
     path: '/agent',
+  },
+  {
+    icon: MapIcon,
+    name: i18next.t('pages.settings.title'),
+    path: '/map',
   },
   {
     icon: Settings,

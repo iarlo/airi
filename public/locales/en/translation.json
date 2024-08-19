@@ -125,6 +125,9 @@
       "description": "Home page of the application.",
       "title": "Report"
     },
+    "map": {
+      "title": "Map"
+    },
     "profile": {
       "title": "User Profile",
       "updateError": "Could not update the profile. Please try again later.",

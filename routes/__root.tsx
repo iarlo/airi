@@ -4,7 +4,7 @@ import { Toaster } from '@components/Toaster';
 import useWindow from '@hooks/useWindow';
 import { createRootRoute, Link, Outlet } from '@tanstack/react-router';
 import { cn } from '@utils/cn';
-import { Newspaper, Calendar, User, Stethoscope, Settings } from 'lucide-react';
+import { Newspaper, Calendar, User, Stethoscope, Settings, MapIcon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const rootComponent = () => {
@@ -31,6 +31,11 @@ const rootComponent = () => {
       icon: Stethoscope,
       name: t('pages.agents.title'),
       path: '/agent',
+    },
+    {
+      icon: MapIcon,
+      name: t('pages.settings.title'),
+      path: '/map',
     },
     {
       icon: Settings,
