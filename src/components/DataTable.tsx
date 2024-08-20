@@ -54,7 +54,6 @@ export function DataTable<TData, TValue>({
         address: false,
       },
     },
-    debugTable: true,
   });
 
   return (

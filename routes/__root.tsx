@@ -1,6 +1,7 @@
 import LogoComponent from '@components/Logo';
 import Titlebar from '@components/Titlebar';
 import { Toaster } from '@components/Toaster';
+import UpdateDialog from '@components/UpdateDialog';
 import useWindow from '@hooks/useWindow';
 import { createRootRoute, Link, Outlet } from '@tanstack/react-router';
 import { cn } from '@utils/cn';
@@ -34,7 +35,7 @@ const rootComponent = () => {
     },
     {
       icon: MapIcon,
-      name: t('pages.settings.title'),
+      name: t('pages.map.title'),
       path: '/map',
     },
     {
@@ -72,6 +73,7 @@ const rootComponent = () => {
       <main className="p-4">
         <Outlet />
       </main>
+      <UpdateDialog />
       <Toaster />
     </>
   );

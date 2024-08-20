@@ -36,7 +36,6 @@ export const appointmentQuery = (dateStart: Date, dateEnd: Date) =>
   queryOptions({
     queryFn: async () => {
       const query = await selectAppointmentsByDate(dateStart, dateEnd);
-      console.log(query);
       return query;
     },
     queryKey: ['appointment', 'many', dateStart, dateEnd],

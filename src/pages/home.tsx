@@ -23,7 +23,6 @@ const HomePage = () => {
       {
         queryFn: async () => {
           const [query] = await asyncWrapper(homePageCount);
-          console.log(query);
           return query && query[0];
         },
         queryKey: ['count'],
