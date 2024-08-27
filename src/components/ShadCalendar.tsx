@@ -5,7 +5,7 @@ import { SelectValue } from '@radix-ui/react-select';
 import { cn } from '@utils/cn';
 import { ptBR } from 'date-fns/locale/pt-BR';
 import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp } from 'lucide-react';
-import React, { ChangeEvent, ChangeEventHandler } from 'react';
+import { ChangeEvent, ChangeEventHandler } from 'react';
 import { DayPicker, DayPickerProps } from 'react-day-picker';
 
 import { buttonVariants } from './Button';
