@@ -26,6 +26,9 @@ const MapIndexLazyImport = createFileRoute('/map/')();
 const AppointmentIndexLazyImport = createFileRoute('/appointment/')();
 const AgentIndexLazyImport = createFileRoute('/agent/')();
 const UserEditIdLazyImport = createFileRoute('/user/edit/$id')();
+const AppointmentDetailsIdLazyImport = createFileRoute(
+  '/appointment/details/$id',
+)();
 
 // Create/Update Routes
 
@@ -87,6 +90,13 @@ const UserEditIdLazyRoute = UserEditIdLazyImport.update({
   getParentRoute: () => rootRoute,
 } as any).lazy(() =>
   import('./../routes/user/edit.$id.lazy').then((d) => d.Route),
+);
+
+const AppointmentDetailsIdLazyRoute = AppointmentDetailsIdLazyImport.update({
+  path: '/appointment/details/$id',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() =>
+  import('./../routes/appointment/details.$id.lazy').then((d) => d.Route),
 );
 
 // Populate the FileRoutesByPath interface
@@ -156,6 +166,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UserIndexLazyImport;
       parentRoute: typeof rootRoute;
     };
+    '/appointment/details/$id': {
+      id: '/appointment/details/$id';
+      path: '/appointment/details/$id';
+      fullPath: '/appointment/details/$id';
+      preLoaderRoute: typeof AppointmentDetailsIdLazyImport;
+      parentRoute: typeof rootRoute;
+    };
     '/user/edit/$id': {
       id: '/user/edit/$id';
       path: '/user/edit/$id';
@@ -178,6 +195,7 @@ export const routeTree = rootRoute.addChildren({
   MapIndexLazyRoute,
   SettingsIndexLazyRoute,
   UserIndexLazyRoute,
+  AppointmentDetailsIdLazyRoute,
   UserEditIdLazyRoute,
 });
 
@@ -198,6 +216,7 @@ export const routeTree = rootRoute.addChildren({
         "/map/",
         "/settings/",
         "/user/",
+        "/appointment/details/$id",
         "/user/edit/$id"
       ]
     },
@@ -227,6 +246,9 @@ export const routeTree = rootRoute.addChildren({
     },
     "/user/": {
       "filePath": "user/index.lazy.tsx"
+    },
+    "/appointment/details/$id": {
+      "filePath": "appointment/details.$id.lazy.tsx"
     },
     "/user/edit/$id": {
       "filePath": "user/edit.$id.lazy.tsx"

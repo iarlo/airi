@@ -10,7 +10,7 @@ const selectRandomFromTable = async <T extends keyof Tables, U extends Tables[T]
     [limit]
   );
 
-const selectFromTable = async (table: keyof Tables, id: number) =>
+const selectFromTable = async <T extends keyof Tables, U extends Tables[T]>(table: T, id: number): Promise<U[]> =>
   await db.select(`SELECT * FROM ${table} WHERE id = $1`, [id]);
 
 const selectFromTableBy = async <T extends keyof Tables, U extends Tables[T], V extends keyof U>(
@@ -34,6 +34,21 @@ const selectAppointmentsByDate = async (
     [firstDate, lastDate]
   );
 
+const selectAppointmentById = async (
+  id: number
+): Promise<
+  (Appointment & {
+    user_name: string | null;
+    user_address: string | null;
+    user_cns: string | null;
+    agent_name: string | null;
+  })[]
+> =>
+  await db.select(
+    'SELECT appointments.*, agents.name as agent_name, users.id as user_id, users.name as user_name, users.cns as user_cns, users.address as user_address FROM appointments LEFT JOIN users ON users.id = appointments.user_id LEFT JOIN agents ON agents.id = appointments.agent_id WHERE appointments.id = $1',
+    [id]
+  );
+
 const selectManyAgent = async (): Promise<Agent[]> => await db.select(`SELECT * FROM agents`);
 
 const selectUserBySearch = async (input: string): Promise<(User & { agent_id: number })[]> =>
@@ -50,4 +65,5 @@ export {
   selectFromTable,
   selectFromTableBy,
   selectUserBySearch,
+  selectAppointmentById,
 };

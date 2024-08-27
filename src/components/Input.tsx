@@ -1,6 +1,6 @@
 import { cn } from '@utils/cn';
 import { forwardRef, InputHTMLAttributes, LegacyRef } from 'react';
-import { IMaskMixin } from 'react-imask';
+import { IMaskInputProps, IMaskMixin } from 'react-imask';
 
 export type InputProps = InputHTMLAttributes<HTMLInputElement>;
 
@@ -19,7 +19,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({ className, type, ...pr
 });
 Input.displayName = 'Input';
 
-const MaskedInput = IMaskMixin(({ inputRef, ...props }) => (
+const MaskedInput = IMaskMixin<HTMLInputElement, IMaskInputProps<HTMLInputElement>>(({ inputRef, ...props }) => (
   <Input {...props} ref={inputRef as LegacyRef<HTMLInputElement>} />
 ));
 
