@@ -1,6 +1,7 @@
 import { Button } from '@components/Button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@components/Card';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from '@components/Form';
+import { BirthDateField } from '@components/form/MaskedInputs';
 import { Input, MaskedInput } from '@components/Input';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@components/Select';
 import i18n from '@config/i18n/main';
@@ -14,7 +15,7 @@ import { asyncWrapper } from '@utils/asyncWrapper';
 import { newUserSchema } from '@utils/schema';
 import { toastError, toastSuccess } from '@utils/toastMessage';
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { Control, useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 const NewUserForm = () => {
@@ -43,7 +44,7 @@ const NewUserForm = () => {
       phone: undefined,
       address: '',
       agent_id: undefined,
-      birthdate: undefined,
+      birthdate: new Date(),
     },
   });
   const onSubmit = (values: z.infer<typeof newUserSchema>) => {
@@ -239,6 +240,7 @@ const NewUserForm = () => {
                       }}
                     />
                   </div>
+                  <BirthDateField control={form.control as unknown as Control} name="birthdate" />
                 </div>
                 <Button className="w-full mt-4" type="submit">
                   {i18n.t('actions.register')}

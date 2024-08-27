@@ -1,6 +1,11 @@
 import { Tables } from '@src/database/main';
 
 export function asyncWrapper<T extends keyof Tables, U extends Tables[T]>(
+  fn: (table: T, id: number) => Promise<U[]>,
+  table: T,
+  id: number
+): Promise<[U[] | null, unknown]>;
+export function asyncWrapper<T extends keyof Tables, U extends Tables[T]>(
   fn: (table: T, select: (keyof U)[] | '*', limit: number) => Promise<U[]>,
   table: T,
   select: (keyof U)[] | '*',

@@ -12,6 +12,7 @@ import { User } from '@src/database/main';
 import { UseMutationResult } from '@tanstack/react-query';
 import { Link } from '@tanstack/react-router';
 import { ColumnDef } from '@tanstack/react-table';
+import { format } from 'date-fns';
 import { MoreHorizontal } from 'lucide-react';
 
 import { formatDocument, formatPhone } from './format';
@@ -51,6 +52,11 @@ export const columns = (mut: Props): ColumnDef<User & { agent_name: string | nul
   {
     accessorKey: 'address',
     header: i18n.t('table.columns.address'),
+  },
+  {
+    accessorKey: 'birthdate',
+    header: i18n.t('table.columns.birth'),
+    cell: ({ row }) => format(new Date(row.original.birthdate as Date), 'dd/MM/yyyy'),
   },
   {
     cell: ({ row }) => {

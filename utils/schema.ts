@@ -16,8 +16,7 @@ const document = z
     z.string().regex(/^(?=(.{11}|.{15})$)\s*(\d{3})(\d{3}|\d{4})(\d{3}|\d{4})(\d{4}|\d{2})\s*$/, invalid),
   ])
   .optional()
-  .transform((e) => (typeof e === 'string' && e === '' ? undefined : e))
-  .refine(validateDocument, i18n.t('errors.form.unique', { what: i18n.t('table.columns.document').toLowerCase() }));
+  .transform((e) => (typeof e === 'string' && e === '' ? undefined : e));
 
 const phone = z
   .union([
@@ -27,13 +26,31 @@ const phone = z
   .optional()
   .transform((e) => (typeof e === 'string' && e === '' ? undefined : e));
 
+const updateUserSchema = z
+  .object({
+    address: z.string().optional(),
+    agent_id: z
+      .string()
+      .regex(/^[0-9]*$/)
+      .optional(),
+    cns: document,
+    gender,
+    name,
+    phone,
+    birthdate: z.date().optional(),
+  })
+  .partial();
+
 const newUserSchema = z.object({
   address: z.string().optional(),
   agent_id: z
     .string()
     .regex(/^[0-9]*$/)
     .optional(),
-  cns: document,
+  cns: document.refine(
+    validateDocument,
+    i18n.t('errors.form.unique', { what: i18n.t('table.columns.document').toLowerCase() })
+  ),
   gender,
   name,
   phone,
@@ -59,4 +76,4 @@ const newAgentSchema = z.object({
   birthdate: z.date().optional(),
 });
 
-export { phone, document, gender, name, newUserSchema, newAppointmentSchema, newAgentSchema };
+export { phone, document, gender, name, newUserSchema, newAppointmentSchema, newAgentSchema, updateUserSchema };

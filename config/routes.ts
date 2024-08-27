@@ -25,7 +25,7 @@ export const navbarLinks = [
   },
   {
     icon: MapIcon,
-    name: i18next.t('pages.settings.title'),
+    name: i18next.t('pages.map.title'),
     path: '/map',
   },
   {

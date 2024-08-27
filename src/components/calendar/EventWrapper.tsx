@@ -1,10 +1,11 @@
 import Avatar from '@components/Avatars';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@components/HoverCard';
+import { useNavigate } from '@tanstack/react-router';
 import { cn } from '@utils/cn.ts';
 import { EventWrapperProps } from 'react-big-calendar';
 
 function CalendarEventWrapper({ className, event, style }: Readonly<EventWrapperProps>) {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const name = event.title?.toString().toLowerCase();
   const phone = event?.resource?.user?.phone;
   const dateString = `${event?.start?.getHours()}:${event?.start?.getMinutes() || '00'}`;
@@ -22,7 +23,7 @@ function CalendarEventWrapper({ className, event, style }: Readonly<EventWrapper
           className,
           'max-w-[14.2857%] cursor-pointer top-2 max-w-[calc(100%)] w-[calc(100%-1rem)] px-2 pr-1 overflow-x-clip text-ellipsis whitespace-nowrap overflow-clip rounded-lg bg-primary-foreground text-primary'
         )}
-        // onClick={() => navigate(`/appointment/${event.resource?.id}`)}
+        onClick={() => navigate({ to: `/appointment/details/${event.resource?.id}` })}
         style={{
           height: `${style?.height}%`,
           left: `${style?.xOffset}%`,
