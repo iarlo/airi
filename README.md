@@ -29,9 +29,6 @@ Airi is a lightweight offline-first desktop app designed to help users manage th
 
 ![Diagram](/public/diagram.svg)
 
-### Class Diagram
-![Class Diagram](/public/class_diagram.svg)
-
 ## Installation
 To set up and run Airi locally, follow these steps:
 
